@@ -229,6 +229,271 @@
             font-size: 1.5rem;
         }
 
+        /* Update Notification */
+        .update-notification {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 5000;
+            backdrop-filter: blur(10px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .update-notification.active {
+            display: flex;
+        }
+
+        .update-container {
+            background: rgba(30, 39, 46, 0.95);
+            border-radius: 15px;
+            width: 90%;
+            max-width: 700px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 2px solid var(--primary);
+            overflow: hidden;
+            animation: modalAppear 0.5s ease;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .update-header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 25px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .update-header h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .update-header p {
+            color: #aaa;
+            font-size: 1rem;
+        }
+
+        .update-content {
+            padding: 30px;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .update-content h3 {
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .update-content h4 {
+            color: var(--primary);
+            margin: 20px 0 10px 0;
+            font-size: 1.3rem;
+        }
+
+        .update-content h5 {
+            color: var(--secondary);
+            margin: 15px 0 8px 0;
+            font-size: 1.1rem;
+        }
+
+        .update-content ul {
+            list-style-type: none;
+            margin-bottom: 20px;
+        }
+
+        .update-content li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .update-content li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        .update-footer {
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Theme Lock Modal */
+        .theme-lock-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 5000;
+            backdrop-filter: blur(10px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-lock-modal.active {
+            display: flex;
+        }
+
+        .theme-lock-container {
+            background: rgba(30, 39, 46, 0.95);
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 2px solid var(--primary);
+            overflow: hidden;
+            animation: modalAppear 0.5s ease;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .theme-lock-icon {
+            font-size: 4rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .theme-lock-container h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .theme-lock-container p {
+            color: #ddd;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .theme-lock-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .theme-lock-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Suggestion Toggle Button */
+        .suggestion-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 170px;
+            z-index: 1000;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .suggestion-toggle:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        /* Suggestion Box */
+        .suggestion-box {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(30, 39, 46, 0.95);
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 300px;
+            display: none;
+        }
+
+        .suggestion-box.active {
+            display: block;
+        }
+
+        .suggestion-box h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .suggestion-textarea {
+            width: 100%;
+            height: 100px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            color: var(--light);
+            padding: 10px;
+            margin-bottom: 10px;
+            resize: vertical;
+        }
+
+        .suggestion-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .suggestion-btn:hover {
+            background: var(--secondary);
+        }
+
+        /* Hide player actions by default */
+        .player-actions {
+            display: none;
+            gap: 5px;
+            transition: opacity 0.2s ease;
+        }
+        
+        /* Show player actions when admin is active */
+        .admin-active .player-actions {
+            display: flex;
+        }
+        
+        .tier-player:hover .player-actions {
+            opacity: 1;
+        }
+        
+        /* Hide interaction buttons when admin is active */
+        .admin-active .player-interaction {
+            display: none;
+        }
+
         /* Admin Control Panel */
         .admin-panel {
             display: none;
@@ -548,110 +813,6 @@
         .status-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Suggestion Box */
-        .suggestion-box {
-            position: fixed;
-            bottom: 90px;
-            right: 20px;
-            z-index: 1000;
-            background: rgba(30, 39, 46, 0.95);
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            width: 300px;
-            display: none;
-        }
-
-        .suggestion-box.active {
-            display: block;
-        }
-
-        .suggestion-box h3 {
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-
-        .suggestion-textarea {
-            width: 100%;
-            height: 100px;
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 5px;
-            color: var(--light);
-            padding: 10px;
-            margin-bottom: 10px;
-            resize: vertical;
-        }
-
-        .suggestion-btn {
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 8px 15px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            width: 100%;
-        }
-
-        .suggestion-btn:hover {
-            background: var(--secondary);
-        }
-
-        /* Admin Modal */
-        .admin-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 2000;
-            backdrop-filter: blur(5px);
-            align-items: center;
-            justify-content: center;
-        }
-
-        .admin-modal.active {
-            display: flex;
-        }
-
-        .admin-container {
-            background: rgba(30, 39, 46, 0.95);
-            border-radius: 15px;
-            width: 90%;
-            max-width: 500px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            overflow: hidden;
-            animation: modalAppear 0.3s ease;
-        }
-
-        .admin-header {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .admin-header h2 {
-            color: var(--primary);
-            font-size: 1.8rem;
-        }
-
-        .admin-content {
-            padding: 30px;
-        }
-
-        .admin-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
         }
 
         /* Hero Section */
@@ -1151,17 +1312,6 @@
             font-weight: 600;
             color: var(--accent);
             border: 1px solid var(--accent);
-        }
-
-        .player-actions {
-            display: flex;
-            gap: 5px;
-            opacity: 0;
-            transition: opacity 0.2s ease;
-        }
-
-        .tier-player:hover .player-actions {
-            opacity: 1;
         }
 
         .player-action {
@@ -1793,6 +1943,23 @@
             color: white;
         }
 
+        .theme-option.locked {
+            position: relative;
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .theme-option.locked::after {
+            content: '\f023';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8rem;
+        }
+
         /* Footer */
         footer {
             background: rgba(10, 15, 20, 0.95);
@@ -1880,6 +2047,198 @@
             font-size: 0.9rem;
         }
 
+        /* Rules Section */
+        .rules-section {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 100px 0;
+        }
+
+        .rules-container {
+            background: rgba(30, 39, 46, 0.9);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .rules-tabs {
+            display: flex;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .rules-tab {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            background: none;
+            border: none;
+            color: #aaa;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .rules-tab:hover {
+            color: var(--primary);
+            background: rgba(0, 168, 255, 0.1);
+        }
+
+        .rules-tab.active {
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+            background: rgba(0, 168, 255, 0.05);
+        }
+
+        .rules-content {
+            padding: 40px;
+        }
+
+        .rules-tab-content {
+            display: none;
+        }
+
+        .rules-tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .rules-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .rules-header h3 {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .rules-updated {
+            color: #aaa;
+            font-style: italic;
+        }
+
+        .rules-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .rule-item {
+            display: flex;
+            gap: 20px;
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .rule-item:hover {
+            transform: translateX(5px);
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .rule-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .rule-content {
+            flex: 1;
+        }
+
+        .rule-content h4 {
+            color: var(--secondary);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .rule-content p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .rule-punishment {
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(232, 65, 24, 0.1);
+            border-radius: 5px;
+            border-left: 3px solid var(--warning);
+        }
+
+        .rule-punishment strong {
+            color: var(--warning);
+        }
+
+        .rule-punishment ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+
+        .rule-punishment li {
+            margin-bottom: 5px;
+            padding-left: 5px;
+        }
+
+        .town-levels {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .town-level {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .level-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .level-rules {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .rule-content ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .rule-content ol li {
+            margin-bottom: 8px;
+            padding-left: 8px;
+        }
+
         /* Responsive Design */
         @media (max-width: 992px) {
             .hero h1 {
@@ -1942,6 +2301,33 @@
             .theme-selector {
                 bottom: 70px;
             }
+            
+            .suggestion-toggle {
+                bottom: 70px;
+                right: 20px;
+            }
+            
+            .rules-content {
+                padding: 20px;
+            }
+            
+            .rule-item {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+            
+            .rule-number {
+                align-self: flex-start;
+            }
+            
+            .town-levels {
+                flex-direction: column;
+            }
+            
+            .rules-header h3 {
+                font-size: 1.6rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -1964,6 +2350,61 @@
     </style>
 </head>
 <body>
+    <!-- Update Notification -->
+    <div class="update-notification active" id="update-notification">
+        <div class="update-container">
+            <div class="update-header">
+                <h2>FSMP Website Updated!</h2>
+                <p>Check out the latest changes and improvements</p>
+            </div>
+            <div class="update-content">
+                <h3>What's New:</h3>
+                <ul>
+                    <li>Added Rules page with SMP and Town Rules</li>
+                    <li>Updated player list to 28/32 total players</li>
+                    <li>Added new players: @BearboyMC and @SeanksAshura</li>
+                    <li>Enhanced admin controls with visibility toggles</li>
+                    <li>Improved suggestion system with dedicated button</li>
+                    <li>Added Christmas and New Year themes</li>
+                </ul>
+                
+                <h3>New Features:</h3>
+                <h4>Rules Page</h4>
+                <p>Added a comprehensive rules page with separate tabs for:</p>
+                <ul>
+                    <li>SMP Rules (7 main rules)</li>
+                    <li>Town Rules (requirements, levels, protection, and punishments)</li>
+                </ul>
+                
+                <h4>Updated Player Count</h4>
+                <p>Total accepted members: <strong>28/32</strong></p>
+                <p>New players added:</p>
+                <ul>
+                    <li>@BearboyMC</li>
+                    <li>@SeanksAshura</li>
+                </ul>
+                
+                <h4>Navigation Improvement</h4>
+                <p>Added "Rules" to main navigation for easy access to server guidelines</p>
+            </div>
+            <div class="update-footer">
+                <button class="btn" id="close-update-notification">Got It!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Theme Lock Modal -->
+    <div class="theme-lock-modal" id="theme-lock-modal">
+        <div class="theme-lock-container">
+            <div class="theme-lock-icon">
+                <i class="fas fa-lock"></i>
+            </div>
+            <h2 id="theme-lock-title">Theme Locked</h2>
+            <p id="theme-lock-message">This theme is currently locked.</p>
+            <button class="theme-lock-btn" id="theme-lock-close">OK</button>
+        </div>
+    </div>
+
     <!-- Admin Control Indicator -->
     <div class="admin-control-indicator" id="admin-control-indicator">
         <i class="fas fa-user-shield"></i> ADMIN CONTROL (ACTIVE)
@@ -1988,6 +2429,7 @@
                     <li><a href="#tier-system">Tier System</a></li>
                     <li><a href="#ranking">Rankings</a></li>
                     <li><a href="#team">Team</a></li>
+                    <li><a href="#rules">Rules</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="user-actions" id="user-actions">
@@ -2018,10 +2460,15 @@
         </button>
         <div class="theme-options" id="theme-options">
             <button class="theme-option active" data-theme="normal">Normal Theme</button>
-            <button class="theme-option" data-theme="christmas">Christmas Theme</button>
-            <button class="theme-option" data-theme="new-year">New Year Theme</button>
+            <button class="theme-option locked" data-theme="christmas">Christmas Theme</button>
+            <button class="theme-option locked" data-theme="new-year">New Year Theme</button>
         </div>
     </div>
+
+    <!-- Suggestion Toggle Button -->
+    <button class="suggestion-toggle" id="suggestion-toggle">
+        <i class="fas fa-lightbulb"></i>
+    </button>
 
     <!-- Suggestion Box -->
     <div class="suggestion-box" id="suggestion-box">
@@ -2452,58 +2899,7 @@
                             </div>
                         </div>
                         <ul class="rank-players" id="c-rank-players">
-                            <li class="rank-player">
-                                <div class="player-avatar">MC</div>
-                                <div class="player-name">MoonCalf30</div>
-                                <div class="player-interaction">
-                                    <button class="interaction-btn like" data-player="MoonCalf30">
-                                        <i class="fas fa-thumbs-up"></i>
-                                        <span class="interaction-count">12</span>
-                                    </button>
-                                    <button class="interaction-btn dislike" data-player="MoonCalf30">
-                                        <i class="fas fa-thumbs-down"></i>
-                                        <span class="interaction-count">2</span>
-                                    </button>
-                                    <button class="interaction-btn comment" data-player="MoonCalf30">
-                                        <i class="fas fa-comment"></i>
-                                        <span class="interaction-count">5</span>
-                                    </button>
-                                </div>
-                                <div class="player-actions">
-                                    <button class="player-action edit" title="Edit Name">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="player-action delete" title="Remove Player">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                            </li>
-                            <li class="rank-player">
-                                <div class="player-avatar">CR</div>
-                                <div class="player-name">Compulsive Rat</div>
-                                <div class="player-interaction">
-                                    <button class="interaction-btn like" data-player="Compulsive Rat">
-                                        <i class="fas fa-thumbs-up"></i>
-                                        <span class="interaction-count">8</span>
-                                    </button>
-                                    <button class="interaction-btn dislike" data-player="Compulsive Rat">
-                                        <i class="fas fa-thumbs-down"></i>
-                                        <span class="interaction-count">1</span>
-                                    </button>
-                                    <button class="interaction-btn comment" data-player="Compulsive Rat">
-                                        <i class="fas fa-comment"></i>
-                                        <span class="interaction-count">3</span>
-                                    </button>
-                                </div>
-                                <div class="player-actions">
-                                    <button class="player-action edit" title="Edit Name">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="player-action delete" title="Remove Player">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                            </li>
+                            <!-- C Tier players will be added here -->
                         </ul>
                     </div>
                     
@@ -2517,136 +2913,7 @@
                             </div>
                         </div>
                         <ul class="rank-players" id="d-rank-players">
-                            <li class="rank-player">
-                                <div class="player-avatar">CZ</div>
-                                <div class="player-name">caezarrr</div>
-                                <div class="player-interaction">
-                                    <button class="interaction-btn like" data-player="caezarrr">
-                                        <i class="fas fa-thumbs-up"></i>
-                                        <span class="interaction-count">15</span>
-                                    </button>
-                                    <button class="interaction-btn dislike" data-player="caezarrr">
-                                        <i class="fas fa-thumbs-down"></i>
-                                        <span class="interaction-count">3</span>
-                                    </button>
-                                    <button class="interaction-btn comment" data-player="caezarrr">
-                                        <i class="fas fa-comment"></i>
-                                        <span class="interaction-count">7</span>
-                                    </button>
-                                </div>
-                                <div class="player-actions">
-                                    <button class="player-action edit" title="Edit Name">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="player-action delete" title="Remove Player">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                            </li>
-                            <li class="rank-player">
-                                <div class="player-avatar">ZR</div>
-                                <div class="player-name">Zar</div>
-                                <div class="player-interaction">
-                                    <button class="interaction-btn like" data-player="Zar">
-                                        <i class="fas fa-thumbs-up"></i>
-                                        <span class="interaction-count">10</span>
-                                    </button>
-                                    <button class="interaction-btn dislike" data-player="Zar">
-                                        <i class="fas fa-thumbs-down"></i>
-                                        <span class="interaction-count">2</span>
-                                    </button>
-                                    <button class="interaction-btn comment" data-player="Zar">
-                                        <i class="fas fa-comment"></i>
-                                        <span class="interaction-count">4</span>
-                                    </button>
-                                </div>
-                                <div class="player-actions">
-                                    <button class="player-action edit" title="Edit Name">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="player-action delete" title="Remove Player">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                            </li>
-                            <li class="rank-player">
-                                <div class="player-avatar">RZ</div>
-                                <div class="player-name">Rythmzz</div>
-                                <div class="player-interaction">
-                                    <button class="interaction-btn like" data-player="Rythmzz">
-                                        <i class="fas fa-thumbs-up"></i>
-                                        <span class="interaction-count">7</span>
-                                    </button>
-                                    <button class="interaction-btn dislike" data-player="Rythmzz">
-                                        <i class="fas fa-thumbs-down"></i>
-                                        <span class="interaction-count">1</span>
-                                    </button>
-                                    <button class="interaction-btn comment" data-player="Rythmzz">
-                                        <i class="fas fa-comment"></i>
-                                        <span class="interaction-count">2</span>
-                                    </button>
-                                </div>
-                                <div class="player-actions">
-                                    <button class="player-action edit" title="Edit Name">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="player-action delete" title="Remove Player">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                            </li>
-                            <li class="rank-player">
-                                <div class="player-avatar">DT</div>
-                                <div class="player-name">deltatonic_</div>
-                                <div class="player-interaction">
-                                    <button class="interaction-btn like" data-player="deltatonic_">
-                                        <i class="fas fa-thumbs-up"></i>
-                                        <span class="interaction-count">9</span>
-                                    </button>
-                                    <button class="interaction-btn dislike" data-player="deltatonic_">
-                                        <i class="fas fa-thumbs-down"></i>
-                                        <span class="interaction-count">0</span>
-                                    </button>
-                                    <button class="interaction-btn comment" data-player="deltatonic_">
-                                        <i class="fas fa-comment"></i>
-                                        <span class="interaction-count">6</span>
-                                    </button>
-                                </div>
-                                <div class="player-actions">
-                                    <button class="player-action edit" title="Edit Name">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="player-action delete" title="Remove Player">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                            </li>
-                            <li class="rank-player">
-                                <div class="player-avatar">DK</div>
-                                <div class="player-name">&lt;&lt;Dripku&gt;&gt;</div>
-                                <div class="player-interaction">
-                                    <button class="interaction-btn like" data-player="Dripku">
-                                        <i class="fas fa-thumbs-up"></i>
-                                        <span class="interaction-count">11</span>
-                                    </button>
-                                    <button class="interaction-btn dislike" data-player="Dripku">
-                                        <i class="fas fa-thumbs-down"></i>
-                                        <span class="interaction-count">4</span>
-                                    </button>
-                                    <button class="interaction-btn comment" data-player="Dripku">
-                                        <i class="fas fa-comment"></i>
-                                        <span class="interaction-count">8</span>
-                                    </button>
-                                </div>
-                                <div class="player-actions">
-                                    <button class="player-action edit" title="Edit Name">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="player-action delete" title="Remove Player">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                            </li>
+                            <!-- D Tier players will be added here -->
                         </ul>
                     </div>
                     
@@ -2660,58 +2927,7 @@
                             </div>
                         </div>
                         <ul class="rank-players" id="e-rank-players">
-                            <li class="rank-player">
-                                <div class="player-avatar">KG</div>
-                                <div class="player-name">Kayden The GamerYT</div>
-                                <div class="player-interaction">
-                                    <button class="interaction-btn like" data-player="Kayden The GamerYT">
-                                        <i class="fas fa-thumbs-up"></i>
-                                        <span class="interaction-count">5</span>
-                                    </button>
-                                    <button class="interaction-btn dislike" data-player="Kayden The GamerYT">
-                                        <i class="fas fa-thumbs-down"></i>
-                                        <span class="interaction-count">2</span>
-                                    </button>
-                                    <button class="interaction-btn comment" data-player="Kayden The GamerYT">
-                                        <i class="fas fa-comment"></i>
-                                        <span class="interaction-count">1</span>
-                                    </button>
-                                </div>
-                                <div class="player-actions">
-                                    <button class="player-action edit" title="Edit Name">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="player-action delete" title="Remove Player">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                            </li>
-                            <li class="rank-player">
-                                <div class="player-avatar">ST</div>
-                                <div class="player-name">Satoshi</div>
-                                <div class="player-interaction">
-                                    <button class="interaction-btn like" data-player="Satoshi">
-                                        <i class="fas fa-thumbs-up"></i>
-                                        <span class="interaction-count">3</span>
-                                    </button>
-                                    <button class="interaction-btn dislike" data-player="Satoshi">
-                                        <i class="fas fa-thumbs-down"></i>
-                                        <span class="interaction-count">1</span>
-                                    </button>
-                                    <button class="interaction-btn comment" data-player="Satoshi">
-                                        <i class="fas fa-comment"></i>
-                                        <span class="interaction-count">0</span>
-                                    </button>
-                                </div>
-                                <div class="player-actions">
-                                    <button class="player-action edit" title="Edit Name">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="player-action delete" title="Remove Player">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                            </li>
+                            <!-- E Tier players will be added here -->
                         </ul>
                     </div>
                     
@@ -2725,32 +2941,7 @@
                             </div>
                         </div>
                         <ul class="rank-players" id="f-rank-players">
-                            <li class="rank-player">
-                                <div class="player-avatar">XF</div>
-                                <div class="player-name">Xiao Fan</div>
-                                <div class="player-interaction">
-                                    <button class="interaction-btn like" data-player="Xiao Fan">
-                                        <i class="fas fa-thumbs-up"></i>
-                                        <span class="interaction-count">2</span>
-                                    </button>
-                                    <button class="interaction-btn dislike" data-player="Xiao Fan">
-                                        <i class="fas fa-thumbs-down"></i>
-                                        <span class="interaction-count">0</span>
-                                    </button>
-                                    <button class="interaction-btn comment" data-player="Xiao Fan">
-                                        <i class="fas fa-comment"></i>
-                                        <span class="interaction-count">1</span>
-                                    </button>
-                                </div>
-                                <div class="player-actions">
-                                    <button class="player-action edit" title="Edit Name">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="player-action delete" title="Remove Player">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                            </li>
+                            <!-- F Tier players will be added here -->
                         </ul>
                     </div>
                 </div>
@@ -2852,6 +3043,195 @@
         </div>
     </section>
 
+    <!-- Rules Section -->
+    <section id="rules" class="rules-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Server Rules</h2>
+            </div>
+            <div class="rules-container">
+                <div class="rules-tabs">
+                    <button class="rules-tab active" data-tab="smp">SMP Rules</button>
+                    <button class="rules-tab" data-tab="town">Town Rules</button>
+                </div>
+                
+                <div class="rules-content">
+                    <!-- SMP Rules -->
+                    <div class="rules-tab-content active" id="smp-rules">
+                        <div class="rules-header">
+                            <h3>FSMPX Season 2 — Official SMP Rules</h3>
+                            <div class="rules-updated">Last Updated: Season 2</div>
+                        </div>
+                        
+                        <div class="rules-list">
+                            <div class="rule-item">
+                                <div class="rule-number">1</div>
+                                <div class="rule-content">
+                                    <h4>Teaming</h4>
+                                    <p>No team limit.</p>
+                                    <p>Alliances are player-made and can change at any time.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="rule-number">2</div>
+                                <div class="rule-content">
+                                    <h4>Cheating</h4>
+                                    <p>No duping, x-ray, hacked clients, or any cheats.</p>
+                                    <div class="rule-punishment">
+                                        <strong>Punishments:</strong>
+                                        <ul>
+                                            <li>1st offense: 7-day ban</li>
+                                            <li>2nd offense: Permanent ban</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="rule-number">3</div>
+                                <div class="rule-content">
+                                    <h4>Combat Logging (Taboo)</h4>
+                                    <p>If you are C-Tier or above and combat log during a fight, your rank drops instantly.</p>
+                                    <p>Combat logging is a disgrace in PvP. Fight or die — no disconnecting to escape.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="rule-number">4</div>
+                                <div class="rule-content">
+                                    <h4>1v1 Respect</h4>
+                                    <p>Official 1v1 duels cannot be interrupted.</p>
+                                    <p>Interrupting a duel is taboo and punishable.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="rule-number">5</div>
+                                <div class="rule-content">
+                                    <h4>PvP</h4>
+                                    <p>PvP is always on.</p>
+                                    <p>You may kill freely outside towns, but only target players wearing diamond armor or above.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="rule-number">6</div>
+                                <div class="rule-content">
+                                    <h4>Raiding & Griefing</h4>
+                                    <p>Raiding is allowed — take loot, break defenses, do strategic damage.</p>
+                                    <p>Griefing is forbidden.</p>
+                                    <div class="rule-punishment">
+                                        <strong>Punishment:</strong>
+                                        <ul>
+                                            <li>Major griefing: 14 days prison or permanent ban</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="rule-number">7</div>
+                                <div class="rule-content">
+                                    <h4>No Nations/Countries</h4>
+                                    <p>Only towns are allowed. Making a nation or country is strictly forbidden.</p>
+                                    <p>Violation leads to ban, kick, etc. (owner's choice).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Town Rules -->
+                    <div class="rules-tab-content" id="town-rules">
+                        <div class="rules-header">
+                            <h3>Town Rules & Requirements</h3>
+                            <div class="rules-updated">Official Town Guidelines</div>
+                        </div>
+                        
+                        <div class="rules-list">
+                            <div class="rule-item">
+                                <div class="rule-content">
+                                    <h4>Town Requirements</h4>
+                                    <ul>
+                                        <li>Must have 6+ players and lots of builds to be official</li>
+                                        <li>Official towns can create rules and access Owner-backed protection</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="rule-content">
+                                    <h4>Town Levels</h4>
+                                    <div class="town-levels">
+                                        <div class="town-level">
+                                            <div class="level-name">Basic</div>
+                                            <div class="level-rules">15 Town Rules</div>
+                                        </div>
+                                        <div class="town-level">
+                                            <div class="level-name">Elite</div>
+                                            <div class="level-rules">25 Town Rules</div>
+                                        </div>
+                                        <div class="town-level">
+                                            <div class="level-name">Epic</div>
+                                            <div class="level-rules">50 Town Rules</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="rule-content">
+                                    <h4>Town Protection</h4>
+                                    <ul>
+                                        <li>Towns may pay 128 Diamonds/week for Owner-backed protection</li>
+                                        <li>Owner enforces rules, punishes rule-breakers, and supports towns under attack</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="rule-content">
+                                    <h4>Basic Town Rules</h4>
+                                    <ol>
+                                        <li>No griefing inside towns — destroying property is forbidden</li>
+                                        <li>No stealing from town members</li>
+                                        <li>Respect all town members</li>
+                                        <li>All town rules must be written and visible</li>
+                                        <li>You cannot kill inside towns</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="rule-content">
+                                    <h4>Rule-Breaker Punishment</h4>
+                                    <ul>
+                                        <li>Breaking a town rule (non-griefing) requires 32 Diamonds OR 32 Copper Blocks</li>
+                                        <li>Failure to pay: 2 Minecraft days of prison</li>
+                                        <li>Players cannot log out while in prison</li>
+                                        <li>Other players may bail prisoners out by paying the fine</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="rule-content">
+                                    <h4>Griefing Inside Towns</h4>
+                                    <div class="rule-punishment">
+                                        <ul>
+                                            <li>Major griefing: 14 days prison</li>
+                                            <li>Severe cases: Permanent ban</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer id="contact">
         <div class="container">
@@ -2876,6 +3256,7 @@
                         <li><a href="#tier-system">Tier System</a></li>
                         <li><a href="#ranking">Rankings</a></li>
                         <li><a href="#team">Our Team</a></li>
+                        <li><a href="#rules">Rules</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -2894,9 +3275,122 @@
         </div>
     </footer>
 
-    
-
     <script>
+        // Theme System
+        class ThemeSystem {
+            constructor() {
+                this.currentTheme = 'normal';
+                this.lockedThemes = {
+                    'christmas': {
+                        locked: true,
+                        unlockDate: new Date(new Date().getFullYear(), 11, 25), // December 25
+                        unlockMessage: 'Christmas theme will unlock on Christmas Day!'
+                    },
+                    'new-year': {
+                        locked: true,
+                        unlockDate: new Date(new Date().getFullYear() + 1, 0, 1), // January 1
+                        unlockMessage: 'New Year theme will unlock during New Year!'
+                    }
+                };
+                this.init();
+            }
+            
+            init() {
+                this.loadTheme();
+                this.setupEventListeners();
+                this.checkThemeAvailability();
+            }
+            
+            loadTheme() {
+                const savedTheme = localStorage.getItem('fsmpTheme') || 'normal';
+                this.setTheme(savedTheme);
+            }
+            
+            setupEventListeners() {
+                // Theme selector toggle
+                document.getElementById('theme-toggle').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    document.getElementById('theme-options').classList.toggle('active');
+                });
+                
+                // Close theme options when clicking outside
+                document.addEventListener('click', () => {
+                    document.getElementById('theme-options').classList.remove('active');
+                });
+                
+                // Theme option clicks
+                document.querySelectorAll('.theme-option').forEach(option => {
+                    option.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const theme = option.getAttribute('data-theme');
+                        
+                        // Check if theme is locked
+                        if (this.lockedThemes[theme] && this.lockedThemes[theme].locked) {
+                            this.showThemeLockedMessage(theme);
+                            return;
+                        }
+                        
+                        this.setTheme(theme);
+                        document.getElementById('theme-options').classList.remove('active');
+                        
+                        // Update active state
+                        document.querySelectorAll('.theme-option').forEach(opt => {
+                            opt.classList.remove('active');
+                        });
+                        option.classList.add('active');
+                    });
+                });
+                
+                // Close theme lock modal
+                document.getElementById('theme-lock-close').addEventListener('click', () => {
+                    this.closeThemeLockModal();
+                });
+            }
+            
+            setTheme(theme) {
+                document.body.className = '';
+                if (theme !== 'normal') {
+                    document.body.classList.add(`${theme}-theme`);
+                }
+                this.currentTheme = theme;
+                localStorage.setItem('fsmpTheme', theme);
+            }
+            
+            checkThemeAvailability() {
+                const now = new Date();
+                
+                // Check Christmas theme
+                if (now.getMonth() === 11 && now.getDate() === 25) { // December 25
+                    this.lockedThemes.christmas.locked = false;
+                    document.querySelector('.theme-option[data-theme="christmas"]').classList.remove('locked');
+                }
+                
+                // Check New Year theme
+                if (now.getMonth() === 0 && now.getDate() === 1) { // January 1
+                    this.lockedThemes['new-year'].locked = false;
+                    document.querySelector('.theme-option[data-theme="new-year"]').classList.remove('locked');
+                }
+            }
+            
+            showThemeLockedMessage(theme) {
+                const modal = document.getElementById('theme-lock-modal');
+                const title = document.getElementById('theme-lock-title');
+                const message = document.getElementById('theme-lock-message');
+                
+                title.textContent = `${theme.charAt(0).toUpperCase() + theme.slice(1)} Theme Locked`;
+                message.textContent = this.lockedThemes[theme].unlockMessage;
+                
+                modal.classList.add('active');
+            }
+            
+            closeThemeLockModal() {
+                document.getElementById('theme-lock-modal').classList.remove('active');
+            }
+        }
+
+        // Initialize theme system
+        const themeSystem = new ThemeSystem();
+
         // Admin Control System
         class AdminControlSystem {
             constructor() {
@@ -3010,6 +3504,26 @@
                         this.closeAdminPanel();
                     }
                 });
+                
+                // Suggestion toggle button
+                document.getElementById('suggestion-toggle').addEventListener('click', () => {
+                    document.getElementById('suggestion-box').classList.toggle('active');
+                });
+                
+                // Close suggestion box when clicking outside
+                document.addEventListener('click', (e) => {
+                    const suggestionBox = document.getElementById('suggestion-box');
+                    const suggestionToggle = document.getElementById('suggestion-toggle');
+                    
+                    if (!suggestionBox.contains(e.target) && e.target !== suggestionToggle) {
+                        suggestionBox.classList.remove('active');
+                    }
+                });
+                
+                // Close update notification
+                document.getElementById('close-update-notification').addEventListener('click', () => {
+                    this.closeUpdateNotification();
+                });
             }
             
             openPasswordModal() {
@@ -3048,6 +3562,9 @@
                 document.getElementById('admin-controls').classList.add('active');
                 document.getElementById('admin-control-indicator').classList.add('active');
                 
+                // Add admin-active class to body
+                document.body.classList.add('admin-active');
+                
                 // Show the hidden admin sections
                 document.getElementById('player-management').style.display = 'block';
                 document.querySelector('#ranking .add-player-form').style.display = 'block';
@@ -3065,6 +3582,27 @@
                 // Enable player management features
                 this.enablePlayerManagement();
                 this.enableRankingManagement();
+            }
+            
+            deactivateAdminControls() {
+                this.isAdminActive = false;
+                document.body.classList.remove('admin-active');
+                document.getElementById('admin-controls').classList.remove('active');
+                document.getElementById('admin-control-indicator').classList.remove('active');
+                
+                // Hide admin sections
+                document.getElementById('player-management').style.display = 'none';
+                document.querySelector('#ranking .add-player-form').style.display = 'none';
+                
+                // Hide admin actions in player rankings
+                document.querySelectorAll('.player-actions').forEach(action => {
+                    action.style.display = 'none';
+                });
+                
+                // Show interaction buttons
+                document.querySelectorAll('.player-interaction').forEach(interaction => {
+                    interaction.style.display = 'flex';
+                });
             }
             
             enablePlayerManagement() {
@@ -3170,6 +3708,10 @@
                 this.showNotification('Server message updated successfully!', 'success');
             }
             
+            closeUpdateNotification() {
+                document.getElementById('update-notification').classList.remove('active');
+            }
+            
             showNotification(message, type = 'info') {
                 // Create notification element
                 const notification = document.createElement('div');
@@ -3209,164 +3751,51 @@
         // Initialize admin control system
         const adminControlSystem = new AdminControlSystem();
 
-        // Theme Selector Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const themeToggle = document.getElementById('theme-toggle');
-            const themeOptions = document.getElementById('theme-options');
-            const themeButtons = document.querySelectorAll('.theme-option');
+        // All players data with updated list - 28/32
+        const allPlayers = [
+            // C Tier
+            { name: '@MoonCalf30', tier: 'C' },
+            { name: '@Compulsive Rat', tier: 'C' },
+            { name: '@Teo', tier: 'C' },
             
-            // Load saved theme from localStorage
-            const savedTheme = localStorage.getItem('fsmpTheme') || 'normal';
-            setTheme(savedTheme);
+            // D Tier
+            { name: '@Caezarrr', tier: 'D' },
+            { name: '@Zar', tier: 'D' },
+            { name: '@Rythmzz', tier: 'D' },
+            { name: '@deltatonic_', tier: 'D' },
+            { name: '@《Dripku》', tier: 'D' },
+            { name: '@† Endyy !!', tier: 'D' },
+            { name: '@Astro (GOAT)', tier: 'D' },
+            { name: '@Germanguy1039', tier: 'D' },
+            { name: '@LiamPlayzThis', tier: 'D' },
             
-            // Toggle theme options visibility
-            themeToggle.addEventListener('click', function(e) {
-                e.stopPropagation();
-                themeOptions.classList.toggle('active');
-            });
+            // E Tier
+            { name: '@Sai', tier: 'E' },
+            { name: '@Satoshi', tier: 'E' },
+            { name: '@Akari', tier: 'E' },
+            { name: '@Clwn', tier: 'E' },
+            { name: '@Ryo Yamada', tier: 'E' },
             
-            // Close theme options when clicking outside
-            document.addEventListener('click', function() {
-                themeOptions.classList.remove('active');
-            });
+            // F Tier
+            { name: '@Xiao Fan (Evil Star)', tier: 'F' },
+            { name: '@Kayden The GamerYT🎮🕹', tier: 'F' },
+            { name: '@•Xoss', tier: 'F' },
+            { name: '@Clara_^__^', tier: 'F' },
+            { name: '@KAZAI?!', tier: 'F' },
+            { name: '@catimai', tier: 'F' },
             
-            // Set theme when a theme option is clicked
-            themeButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const theme = this.getAttribute('data-theme');
-                    setTheme(theme);
-                    themeOptions.classList.remove('active');
-                    
-                    // Update active state of buttons
-                    themeButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
+            // FLT3 Tier (Additional players)
+            { name: '@ItzParaDox', tier: 'FLT3' },
+            { name: '@Aj', tier: 'FLT3' },
+            { name: '@Astr0_ph🇵🇭', tier: 'FLT3' },
+            { name: '@ִֶָ. ..𓂃 Ａｋａｒｉ ࣪ ִֶָ🪽་༘࿐', tier: 'FLT3' },
+            { name: '@Ray2cool', tier: 'FLT3' },
+            { name: '@Aethan890', tier: 'FLT3' },
             
-            // Set initial active button
-            themeButtons.forEach(button => {
-                if (button.getAttribute('data-theme') === savedTheme) {
-                    button.classList.add('active');
-                }
-            });
-            
-            function setTheme(theme) {
-                document.body.className = '';
-                if (theme !== 'normal') {
-                    document.body.classList.add(`${theme}-theme`);
-                }
-                localStorage.setItem('fsmpTheme', theme);
-            }
-        });
-
-        // Suggestion System
-        document.addEventListener('DOMContentLoaded', function() {
-            const suggestionToggle = document.getElementById('theme-toggle');
-            const suggestionBox = document.getElementById('suggestion-box');
-            const submitSuggestion = document.getElementById('submit-suggestion');
-            
-            // Toggle suggestion box visibility
-            suggestionToggle.addEventListener('click', function() {
-                suggestionBox.classList.toggle('active');
-            });
-            
-            // Close suggestion box when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!suggestionBox.contains(e.target) && e.target !== suggestionToggle) {
-                    suggestionBox.classList.remove('active');
-                }
-            });
-            
-            // Handle suggestion submission
-            submitSuggestion.addEventListener('click', function() {
-                const suggestionText = document.getElementById('suggestion-text').value.trim();
-                
-                if (suggestionText) {
-                    // Save suggestion to localStorage
-                    saveSuggestion(suggestionText);
-                    
-                    // Clear textarea
-                    document.getElementById('suggestion-text').value = '';
-                    
-                    // Show success message
-                    adminControlSystem.showNotification('Suggestion submitted successfully!', 'success');
-                    
-                    // Close suggestion box
-                    suggestionBox.classList.remove('active');
-                } else {
-                    adminControlSystem.showNotification('Please enter a suggestion!', 'error');
-                }
-            });
-            
-            function saveSuggestion(suggestion) {
-                let suggestions = JSON.parse(localStorage.getItem('fsmpSuggestions')) || [];
-                suggestions.push({
-                    text: suggestion,
-                    timestamp: new Date().toISOString()
-                });
-                localStorage.setItem('fsmpSuggestions', JSON.stringify(suggestions));
-            }
-        });
-
-        // Player Interaction System
-        document.addEventListener('DOMContentLoaded', function() {
-            // Load player interactions from localStorage
-            loadPlayerInteractions();
-            
-            // Add event listeners to interaction buttons
-            document.querySelectorAll('.interaction-btn').forEach(button => {
-                button.addEventListener('click', function() {
-                    const playerName = this.getAttribute('data-player');
-                    const interactionType = this.classList.contains('like') ? 'like' : 
-                                          this.classList.contains('dislike') ? 'dislike' : 'comment';
-                    
-                    handlePlayerInteraction(playerName, interactionType, this);
-                });
-            });
-            
-            function handlePlayerInteraction(playerName, type, button) {
-                // Get current interactions
-                let interactions = JSON.parse(localStorage.getItem('fsmpPlayerInteractions')) || {};
-                
-                // Initialize player if not exists
-                if (!interactions[playerName]) {
-                    interactions[playerName] = {
-                        likes: 0,
-                        dislikes: 0,
-                        comments: 0
-                    };
-                }
-                
-                // Update interaction count
-                interactions[playerName][type + 's']++;
-                
-                // Save to localStorage
-                localStorage.setItem('fsmpPlayerInteractions', JSON.stringify(interactions));
-                
-                // Update button count
-                const countElement = button.querySelector('.interaction-count');
-                countElement.textContent = interactions[playerName][type + 's'];
-                
-                // Show feedback
-                adminControlSystem.showNotification(`${type.charAt(0).toUpperCase() + type.slice(1)} added for ${playerName}!`, 'success');
-            }
-            
-            function loadPlayerInteractions() {
-                const interactions = JSON.parse(localStorage.getItem('fsmpPlayerInteractions')) || {};
-                
-                // Update all interaction buttons with saved counts
-                document.querySelectorAll('.interaction-btn').forEach(button => {
-                    const playerName = button.getAttribute('data-player');
-                    const interactionType = button.classList.contains('like') ? 'likes' : 
-                                          button.classList.contains('dislike') ? 'dislikes' : 'comments';
-                    
-                    if (interactions[playerName] && interactions[playerName][interactionType]) {
-                        const countElement = button.querySelector('.interaction-count');
-                        countElement.textContent = interactions[playerName][interactionType];
-                    }
-                });
-            }
-        });
+            // NEW PLAYERS ADDED (Total: 28/32)
+            { name: '@BearboyMC', tier: 'FLT3' },
+            { name: '@SeanksAshura', tier: 'FLT3' }
+        ];
 
         // Game Mode Tiers Data
         const gameModes = [
@@ -3419,7 +3848,7 @@
             // Render game mode tiers
             renderGameModeTiers();
             
-            // Render player rankings
+            // Render player rankings with updated data
             renderPlayerRankings();
             
             // Setup event listeners
@@ -3439,26 +3868,78 @@
                 });
             });
             
-            // Initialize ranking system
+            // Initialize ranking system with updated players
             initializeRankingSystem();
             
             // Setup authentication
             setupAuthentication();
+            
+            // Load player interactions
+            loadPlayerInteractions();
+            
+            // Initialize Rules Tabs
+            initializeRulesTabs();
+            
+            // Suggestion System
+            const submitSuggestion = document.getElementById('submit-suggestion');
+            
+            // Handle suggestion submission
+            submitSuggestion.addEventListener('click', function() {
+                const suggestionText = document.getElementById('suggestion-text').value.trim();
+                
+                if (suggestionText) {
+                    // Save suggestion to localStorage
+                    saveSuggestion(suggestionText);
+                    
+                    // Clear textarea
+                    document.getElementById('suggestion-text').value = '';
+                    
+                    // Show success message
+                    adminControlSystem.showNotification('Suggestion submitted successfully!', 'success');
+                    
+                    // Close suggestion box
+                    document.getElementById('suggestion-box').classList.remove('active');
+                } else {
+                    adminControlSystem.showNotification('Please enter a suggestion!', 'error');
+                }
+            });
+            
+            function saveSuggestion(suggestion) {
+                let suggestions = JSON.parse(localStorage.getItem('fsmpSuggestions')) || [];
+                suggestions.push({
+                    text: suggestion,
+                    timestamp: new Date().toISOString()
+                });
+                localStorage.setItem('fsmpSuggestions', JSON.stringify(suggestions));
+            }
         });
 
-        // Initialize default players
-        function initializeDefaultPlayers() {
-            const defaultPlayers = [
-                '@MoonCalf30', '@Zar', '@Aj', '@Kayden The GamerYT🎮🕹', '@ItzParaDox',
-                '@Caezarrr', '@Rythmzz', '@Astr0_ph🇵🇭', '@ִֶָ. ..𓂃 Ａｋａｒｉ ࣪ ִֶָ🪽་༘࿐',
-                '@deltatonic_', '@Satoshi', '@《Dripku》', '@catimai', '@Compulsive Rat',
-                '@•Xoss', '@Ray2cool', '@† Endyy !!', '@Sai', '@Teo', '@Clara_03'
-            ];
+        // Rules Tabs Functionality
+        function initializeRulesTabs() {
+            const rulesTabs = document.querySelectorAll('.rules-tab');
+            const rulesContents = document.querySelectorAll('.rules-tab-content');
             
-            defaultPlayers.forEach(playerName => {
+            rulesTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const tabName = tab.getAttribute('data-tab');
+                    
+                    // Update active tab
+                    rulesTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    // Update active content
+                    rulesContents.forEach(content => content.classList.remove('active'));
+                    document.getElementById(`${tabName}-rules`).classList.add('active');
+                });
+            });
+        }
+
+        // Initialize default players with updated list
+        function initializeDefaultPlayers() {
+            allPlayers.forEach(playerData => {
                 players.push({
                     id: generateId(),
-                    name: playerName,
+                    name: playerData.name,
                     gameModes: {
                         sword: 'FLT3',
                         uhc: 'FLT3',
@@ -3790,6 +4271,16 @@
 
         // Ranking System Functionality
         function initializeRankingSystem() {
+            // Clear existing players
+            document.querySelectorAll('.rank-players').forEach(list => {
+                list.innerHTML = '';
+            });
+            
+            // Add players to their respective tiers
+            allPlayers.forEach(playerData => {
+                addPlayerToRank(playerData.name, playerData.tier);
+            });
+            
             // Load saved players from localStorage
             loadSavedPlayers();
             
